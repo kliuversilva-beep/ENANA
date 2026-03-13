@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+text-align:center;
+background:#6a0dad;
+color:white;
+}
+
+/* PAGINAS */
+.pagina{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+#pagina1{
+display:flex;
+}
+
+/* BOTON */
+
+button{
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:10px;
+background:white;
+color:#6a0dad;
+cursor:pointer;
+}
+
+button:hover{
+background:#ddd;
+}
+
+/* VIDEO PARA CELULAR */
+
+video{
+width:80%;
+max-width:400px;
+border-radius:15px;
+}
+
+/* FRASE FINAL */
+
+#frase{
+display:none;
+font-size:28px;
+margin-top:20px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGINA 1 -->
+<div id="pagina1" class="pagina">
+
+<h1>Tengo algo para ti 💜</h1>
+
+<button onclick="siguiente()">Siguiente</button>
+
+</div>
+
+
+<!-- PAGINA 2 -->
+<div id="pagina2" class="pagina">
+
+<video id="video" autoplay controls>
+<source src="Video.mp4" type="video/mp4">
+</video>
+
+<h2 id="frase">JAJAJAJA ENANA ESTUPIDA</h2>
+
+</div>
+
+
+<script>
+
+function siguiente(){
+
+document.getElementById("pagina1").style.display="none";
+document.getElementById("pagina2").style.display="flex";
+
+let video = document.getElementById("video");
+video.play();
+
+/* cuando termine el video */
+video.onended = function(){
+document.getElementById("frase").style.display="block";
+};
+
+}
+
+</script>
+
+</body>
+</html>
